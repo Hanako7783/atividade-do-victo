@@ -78,7 +78,7 @@ S
  console.log(nomeMaiusculo.slice(0,6))
 
  // arrays, vetores, listas
-*/
+
 
  const lista = ['a',"b","c","d",'e']
  console.log(lista.length)
@@ -136,3 +136,71 @@ const json2 = JSON.parse(json)
 console.log(json2)
 const jsonErrado = JSON.stringify('{"nome":"Scooby","idade":10,}')
 console.log(jsonErrado)
+
+*/
+
+
+
+
+
+
+
+
+
+
+// funções
+/*
+function minhaFuncao(){
+   console.log('Estou dentro da minha função')
+
+}
+
+minhaFuncao()
+
+
+function minhaFuncao(nome, sobrenome){
+   console.log('O nome completo é ${nome} ${sobrenome}.')
+   console.log(typeof nome)
+   return('${nome} ${sobrenome}')
+
+}
+
+minhaFuncao('Victor','Vieira')
+minhaFuncao(10,20)
+
+
+// arrow 
+
+const soma = (a,b) => a + b
+console.log(soma(5,3))
+
+const lista = ['esse cara é maior','b','c','d']
+
+console.log(lista.map(elemento => elemento.length))
+*/
+
+// fechamentos
+
+/*
+let x = 10
+function fora(){
+   function somarXMais5(){
+      return x+5
+   }
+   return somarXMais5()
+}
+console.log(fora())
+
+const soma = (x,b) => x + b
+console.log(soma(x,5))
+*/
+/*
+
+let x = 10
+const fora = () => (() => x+5) ()
+console.log(fora())
+console.log(typeof fora())
+*/
+
+const fora =() => ((x=7),()=>x+5) ()
+console.log(fora())
