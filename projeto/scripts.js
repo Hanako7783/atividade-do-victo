@@ -86,7 +86,7 @@ S
  console.log(typeof lista)
  lista[5] = 'f'
  console.log(lista[5])
- lista[0]='x'
+ lista[0]='x' //  vetoris numerados de 0 a 5
  console.log(lista)
  lista.push('g')
  console.log(lista)
@@ -159,7 +159,7 @@ minhaFuncao()
 
 
 function minhaFuncao(nome, sobrenome){
-   console.log('O nome completo é ${nome} ${sobrenome}.')
+   console.log('O nome completo é ${nome} ${sobrenome}.') //<- n fiz as aspas igual o original
    console.log(typeof nome)
    return('${nome} ${sobrenome}')
 
@@ -201,6 +201,94 @@ const fora = () => (() => x+5) ()
 console.log(fora())
 console.log(typeof fora())
 */
-
+/*
 const fora =() => ((x=7),()=>x+5) ()
 console.log(fora())
+
+
+// Orientação a objeto
+
+
+class Produto {
+   constructor (nome, preco){
+      this.nome = nome
+      this.preco = preco
+   } 
+   detalhesDoProduto(){
+      console.log('O preco do produto' + this.preco,' é' + this.nome) //<- n fiz 
+   }
+}
+
+const camisa = new Produto('camisa',19.90)
+console.log(camisa.nome)
+
+
+
+console.log('O preco do produto' + Produto.preco + ' é' + this.nome)
+
+
+
+// herança
+
+
+
+class ProdutoComTamanho extends Produto{
+   constructor(nome, preco, tamanho) {
+      supernome, preco
+      this.tamanho = tamanho
+   }
+   outraMensagem(adjetivo){
+      return 'produto ${this.nome} é ${adjetivo} demais.'
+   }
+}
+
+const camisa = new ProdutoComTamanho('camisa','6.55','M')
+
+console.log(camisa.detalhesDoProduto())
+console.log(camisa.outraMensagem('boa'))
+*/
+
+//Dom - Document object Model
+
+
+const titulo = document.getElementById('titulo')
+console.log(titulo)
+
+
+
+
+
+// qurry selector
+const mesmoTitulo = document.querySelector('#titulo')
+console.log(mesmoTitulo)
+const todosOsparagrafos = document.querySelectorAll('.texto')
+console.log(todosOsparagrafos)
+
+todosOsparagrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
+
+
+
+//manipulação
+const textoAlterado = todosOsparagrafos[0].textContent
+console.log(textoAlterado)
+
+todosOsparagrafos[4].innerHTML = textoAlterado
+
+
+todosOsparagrafos[2].style.backgroundColor ='red'
+
+
+todosOsparagrafos[3].classList.add('outra-classe')
+
+todosOsparagrafos[3].classList.remove('outra-classe')
+
+titulo.remove()
+todosOsparagrafos[0].remove()
+
+
+// eventos
+const botao = document.getElementById('botao')
+botao.addEventListener('click',function(){
+   console.log('clickvarias')// botão que manda mensagem no console
+   todosOsparagrafos[3].style.backgroundColor = 'blue'
+})
